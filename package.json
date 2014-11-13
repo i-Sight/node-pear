@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/nherment/node-pear",
   "dependencies": {
-    "node-cache": "1.0.3",
-    "uuid": "2.0.1"
+    "node-cache": "1.0.3"
   },
   "devDependencies": {
-    "mocha": "2.0.1"
+    "mocha": "2.0.1",
+    "uuid": "2.0.1"
   }
 }
