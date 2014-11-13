@@ -1,0 +1,31 @@
+{
+  "name": "pear",
+  "version": "0.1.0",
+  "description": "in-memory cache with timeouts and smart asynchronous fetch",
+  "main": "pear.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nherment/node-pear.git"
+  },
+  "keywords": [
+    "asynchronous",
+    "cache",
+    "timeouts"
+  ],
+  "author": "Nicolas Herment <nherment@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nherment/node-pear/issues"
+  },
+  "homepage": "https://github.com/nherment/node-pear",
+  "dependencies": {
+    "node-cache": "1.0.3",
+    "uuid": "2.0.1"
+  },
+  "devDependencies": {
+    "mocha": "2.0.1"
+  }
+}
