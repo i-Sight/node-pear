@@ -113,5 +113,40 @@ describe('pear', function() {
 
 	})
 
+	it('manual cache invalidation', function(done) {
 
+		var pear = new Pear({stdTTL: 10/*second*/})
+
+		var id = 0;
+		var shouldBeCached = false
+		pear.on('fetch', function(key, callback) {
+			assert.ok(!shouldBeCached, 'expected cache to be used instead of fetching data again')
+			shouldBeCached = true
+      id ++
+			callback(undefined, id)
+		})
+
+		pear.get('foo', function(err, fetchedId) {
+
+			assert.ok(!err, err)
+			assert.equal(fetchedId, 1)
+
+			pear.get('foo', function(err, fetchedId) {
+				assert.ok(!err, err)
+				assert.equal(fetchedId, 1)
+
+        pear.invalidate('foo')
+        shouldBeCached = false;
+        
+			  pear.get('foo', function(err, fetchedId) {
+				  assert.ok(!err, err)
+				  assert.equal(fetchedId, 2)
+				  done()
+			  })
+		  })
+
+	  })
+
+
+  })
 })
