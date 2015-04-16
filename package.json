@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/nherment/node-pear",
   "dependencies": {
-    "node-cache": "1.0.3"
+    "node-cache": "^1.1.0"
   },
   "devDependencies": {
     "mocha": "2.0.1",

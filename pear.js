@@ -29,7 +29,11 @@ function Pear(options) {
 util.inherits(Pear, EventEmitter)
 
 Pear.prototype.invalidate = function(key) {
-  this._cache.del(key)
+  if(key) {
+    this._cache.del(key)
+  } else {
+    this._cache.del(this._cache.keys())
+  }
 }
 
 Pear.prototype.get = function(key, callback) {
