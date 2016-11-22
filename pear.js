@@ -17,11 +17,12 @@ function Pear(options) {
 		self._fetchInProgress[key] = false
 		if(callbacks) {
 			for(var i = 0 ; i < callbacks.length ; i++) {
-				setImmediate(
+				if(callbacks[i]){
 					(function(callback) {
-						callback(err, value)
-					})(callbacks[i])
-				)
+						callback(err, value);
+					})
+					(callbacks[i])
+				}
 			}
 		}
 	})
